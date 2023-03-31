@@ -33,10 +33,10 @@
           <option value="{{$municipio->muni_codi}}">{{$municipio->muni_nomb}}</option>
         @endforeach
       </select>
-
+      <br>
       <div class="mb-3">
         <button type="submit" class="btn btn-primary">Save</button>
-        <a href="{{route("comunas.index")}}" class="btn btn_warning">Cancel</a>
+        <a href="{{route("comunas.index")}}" class="btn btn-warning">Cancel</a>
       </div>
 
     </form>
