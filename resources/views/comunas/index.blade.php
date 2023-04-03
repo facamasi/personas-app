@@ -14,7 +14,7 @@
     <div class ="container">
     <h1>listado de Comunas</h1>
     <a href="{{route('comunas.create')}}" class="btn btn-success">Add</a>
-    <table class="table">
+    <table class="table"></li>
         <thead>
             <tr>
                 <th scope="col">Code</th>
@@ -25,21 +25,28 @@
         </thead>
         <tbody>
             @foreach ($comunas as $comuna)
+
             <tr>
+
                 <th scope="row">{{$comuna->comu_codi}}</th>
                 <td>{{$comuna->comu_nomb}}</td>
                 <td>{{$comuna->muni_nomb}}</td>
                 {{-- <th><span>Actions</span></th> --}}
+
                 <td>
+                    <a href="{{route("comunas.edit", ["comuna" => $comuna->comu_codi])}}"
+                        class="btn btn-info">Edit</a>
+
                     <form action={{route("comunas.destroy",["comuna" => $comuna->comu_codi])}}"
-                        method="POST" style=(display: inline-block>
+                        method="POST" style=display: inline-block>
                         @method("delete")
                         @csrf
+                        <tr>
                         <input class="btn btn-danger" type="submit" value="Delete">
                     </form>
-
                 </td>
             </tr>
+
             @endforeach
         </tbody>
     </table>
